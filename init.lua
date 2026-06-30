@@ -1,5 +1,5 @@
 -- load core options
-require("config.options")
+require("options")
 
 -- load autocmds
-require("config.autocmds")
+require("autocmds")
