@@ -18,3 +18,6 @@ require("mason-lspconfig").setup({
 
 -- lsp
 vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" } } } } })
+
+-- keymaps
+vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, { desc = "Definition" })
