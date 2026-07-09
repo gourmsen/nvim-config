@@ -1,5 +1,6 @@
 -- install
 vim.pack.add({
+    { src = "https://github.com/github/copilot.vim" },
     { src = "https://github.com/folke/sidekick.nvim" },
 })
 

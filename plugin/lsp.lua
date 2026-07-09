@@ -13,7 +13,6 @@ require("mason-lspconfig").setup({
         "ts_ls",
         "angularls",
         "markdown_oxide",
-        "copilot",
     },
 })
 
