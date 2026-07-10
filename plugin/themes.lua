@@ -1,15 +1,14 @@
 -- install
 vim.pack.add({
-    { src = "https://github.com/rose-pine/neovim" },
+    { src = "https://github.com/navarasu/onedark.nvim" },
 })
 
 -- configure
-require("rose-pine").setup({
-    styles = {
-        italic = false,
-        transparency = true,
+require("onedark").setup({
+    code_style = {
+        comments = "none",
     },
 })
 
 -- apply
-vim.cmd("colorscheme rose-pine")
+require("onedark").load()
