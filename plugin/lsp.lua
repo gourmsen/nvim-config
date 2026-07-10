@@ -3,6 +3,7 @@ vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+    { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") }, -- v2 currently under development
 })
 
 -- configure
@@ -13,6 +14,18 @@ require("mason-lspconfig").setup({
         "ts_ls",
         "angularls",
         "markdown_oxide",
+    },
+})
+require("blink.cmp").setup({
+    keymap = {
+        ["<C-space>"] = { "show", "hide", "fallback" },
+
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
+        ["<C-k>"] = { "select_prev", "fallback" },
+        ["<C-j>"] = { "select_next", "fallback" },
+
+        ["<CR>"] = { "accept", "fallback" },
     },
 })
 
