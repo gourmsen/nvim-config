@@ -4,6 +4,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
     { src = "https://github.com/folke/which-key.nvim" },
     { src = "https://github.com/windwp/nvim-autopairs" },
+    { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 })
 
 -- configure
@@ -32,3 +33,4 @@ require("which-key").setup({
     },
 })
 require("nvim-autopairs").setup()
+require("ibl").setup()
