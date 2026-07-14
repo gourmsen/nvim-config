@@ -22,7 +22,7 @@ vim.keymap.set({ "n", "v" }, "<leader>at", function()
     require("sidekick.cli").send({
         name = "copilot",
         focus = true,
-        msg = "{this}",
+        msg = "{this}\n\n",
     })
 end, { desc = "Copilot (this)" })
 
@@ -30,6 +30,6 @@ vim.keymap.set("n", "<leader>ad", function()
     require("sidekick.cli").send({
         name = "copilot",
         focus = true,
-        msg = "{diagnostics}",
+        msg = "{diagnostics}\n\n",
     })
 end, { desc = "Copilot (diagnostics)" })
