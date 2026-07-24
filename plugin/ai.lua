@@ -13,23 +13,23 @@ vim.keymap.set("n", "<S-Tab>", "<cmd>Sidekick nes clear<CR>", { desc = "Clear NE
 
 vim.keymap.set("n", "<leader>ai", function()
     require("sidekick.cli").toggle({
-        name = "copilot",
+        name = "opencode",
         focus = true,
     })
-end, { desc = "Copilot (normal)" })
+end, { desc = "OpenCode (normal)" })
 
 vim.keymap.set({ "n", "v" }, "<leader>at", function()
     require("sidekick.cli").send({
-        name = "copilot",
+        name = "opencode",
         focus = true,
         msg = "{this}\n\n",
     })
-end, { desc = "Copilot (this)" })
+end, { desc = "OpenCode (this)" })
 
 vim.keymap.set("n", "<leader>ad", function()
     require("sidekick.cli").send({
-        name = "copilot",
+        name = "opencode",
         focus = true,
         msg = "{diagnostics}\n\n",
     })
-end, { desc = "Copilot (diagnostics)" })
+end, { desc = "OpenCode (diagnostics)" })
