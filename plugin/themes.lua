@@ -5,6 +5,7 @@ vim.pack.add({
 
 -- configure
 require("onedark").setup({
+    transparent = true,
     code_style = {
         comments = "none",
     },
