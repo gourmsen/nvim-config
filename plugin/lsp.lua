@@ -5,6 +5,7 @@ vim.pack.add({
     { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
     { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") }, -- v2 currently under development
     { src = "https://github.com/folke/trouble.nvim" },
+    { src = "https://github.com/rmagatti/goto-preview" },
 })
 
 -- configure
@@ -30,6 +31,7 @@ require("blink.cmp").setup({
     },
 })
 require("trouble").setup()
+require("goto-preview").setup()
 
 -- lsp
 vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" } } } } })
@@ -37,3 +39,20 @@ vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim
 -- keymaps
 vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, { desc = "Definition" })
 vim.keymap.set("n", "<leader>e", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Trouble" })
+vim.keymap.set("n", "<leader>q", function()
+    local goto_preview = require("goto-preview")
+    local has_open = false
+
+    for _, win in ipairs(require("goto-preview.lib").windows) do
+        if vim.api.nvim_win_is_valid(win) then
+            has_open = true
+            break
+        end
+    end
+
+    if has_open then
+        goto_preview.close_all_win()
+    else
+        goto_preview.goto_preview_definition()
+    end
+end, { desc = "Goto Preview (toggle)" })
