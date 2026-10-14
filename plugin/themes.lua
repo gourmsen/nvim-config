@@ -1,6 +1,7 @@
 -- install
 vim.pack.add({
     { src = "https://github.com/navarasu/onedark.nvim" },
+    { src = "https://github.com/EdenEast/nightfox.nvim" },
 })
 
 -- configure
@@ -12,4 +13,4 @@ require("onedark").setup({
 })
 
 -- apply
-require("onedark").load()
+vim.cmd("colorscheme carbonfox")

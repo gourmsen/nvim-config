@@ -31,7 +31,10 @@ require("blink.cmp").setup({
     },
 })
 require("trouble").setup()
-require("goto-preview").setup()
+require("goto-preview").setup({
+    width = 120,
+    height = 30,
+})
 
 -- lsp
 vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" } } } } })
